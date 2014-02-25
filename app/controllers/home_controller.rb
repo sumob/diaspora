@@ -18,8 +18,7 @@ class HomeController < ApplicationController
           partial_dir.join("_show.html.erb").exist?
       render :show
     else
-      render :default,
-             layout: "application"
+        redirect_to user_session_path
     end
   end
 

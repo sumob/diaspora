@@ -18,9 +18,10 @@ class HomeController < ApplicationController
           partial_dir.join("_show.html.erb").exist?
       render :show
     else
-      @css_framework = :bootstrap # Hack, port site to one framework
-      render file: Rails.root.join("public", "default.html"),
-             layout: 'application'
+        redirect_to user_session_path
+#      @css_framework = :bootstrap # Hack, port site to one framework
+#      render file: Rails.root.join("public", "default.html"),
+#             layout: 'application'
     end
   end
 

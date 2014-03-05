@@ -64,7 +64,7 @@ app.Router = Backbone.Router.extend({
 
     $("#main_stream").html(app.page.render().el);
     $('#selected_aspect_contacts .content').html(streamFacesView.render().el);
-    this.hideInactiveStreamLists();
+    this._hideInactiveStreamLists();
   },
 
   photos : function() {
@@ -89,7 +89,7 @@ app.Router = Backbone.Router.extend({
           );
       $("#author_info").prepend(followedTagsAction.render().el)
     }
-    this.hideInactiveStreamLists();
+    this._hideInactiveStreamLists();
   },
 
   aspects : function(){
@@ -112,10 +112,10 @@ app.Router = Backbone.Router.extend({
 
     $("#main_stream").html(app.page.render().el);
     $('#selected_aspect_contacts .content').html(streamFacesView.render().el);
-    this.hideInactiveStreamLists();
+    this._hideInactiveStreamLists();
   },
 
-  hideInactiveStreamLists: function() {
+  _hideInactiveStreamLists: function() {
     if(this.aspects_list && Backbone.history.fragment != "aspects")
       this.aspects_list.hideAspectsList();
 
